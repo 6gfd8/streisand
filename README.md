@@ -1,11 +1,7 @@
 # Streisand
 
-<p align="center">
-<img src="https://raw.githubusercontent.com/jlund/streisand/master/logo.jpg" alt="Automate the effect"/> 
-</p>
-
 - - -
-[English](README.md), [Français](README-fr.md), [简体中文](README-chs.md), [Русский](README-ru.md) | [Mirror](https://gitlab.com/alimakki/streisand)
+[English](README.md), [Français](README-fr.md),[Русский](README-ru.md) | [Mirror](https://gitlab.com/alimakki/streisand)
 - - -
 
 [![Build Status](https://github.com/StreisandEffect/streisand/workflows/Streisand/badge.svg)](https://github.com/StreisandEffect/streisand/actions)
