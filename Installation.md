@@ -77,13 +77,17 @@ sudo yum -y update && sudo yum install -y \
 
 1. Clone the Streisand repository and enter the directory.
 
-        git clone https://github.com/StreisandEffect/streisand.git && cd streisand
+        git clone https://github.com/6gfd8/streisand.git && cd streisand
 
-1. Run the installer for Ansible and its dependencies. The installer will detect missing packages, and print the commands needed to install them. (Ignore the Python 2.7 `DEPRECATION` warning; ignore the warning from python-novaclient that pbr 5.1.3 is incompatible.)
+1. Run the installer for Ansible and its dependencies. The installer will detect missing packages, and print the commands needed to install them. (Ignore the Python 2.7 `DEPRECATION` warning; ignore the warning from python-novaclient that pbr 5.1.3 is incompatible.) 
+
+[Quick Step 1: `sudo apt update && sudo apt upgrade && ssh-keygen && sudo apt-get install git python3 python3-venv rcconf build-essential python3-pip python3-openssl python3-dev python3-setuptools python-cffi libffi-dev libssl-dev libcurl4-openssl-dev && git clone https://github.com/6gfd8/streisand.git && cd streisand && ./util/venv-dependencies.sh ./venv && source ./venv/bin/activate && ./streisand`]
 
        ./util/venv-dependencies.sh ./venv
 
 1. Activate the Ansible packages that were installed.
+
+[Quick Step: `./util/venv-dependencies.sh ./venv && source ./venv/bin/activate && ./streisand`]
 
         source ./venv/bin/activate
 
@@ -100,3 +104,35 @@ sudo yum -y update && sudo yum install -y \
 You should keep a copy of the `generated-docs` directory for the life of the server.
 
 Remember to save your `~/.ssh/id_rsa` and `~/.ssh/id_rsa.pub` SSH keys too. You'll need them in case you want to troubleshoot or perform maintenance on your server later.
+
+## V2Ray Workaround (Oct 2020)
+
+[Quick Step 2: `wget https://github.com/shadowsocks/v2ray-plugin/releases/download/v1.3.1/v2ray-plugin-linux-amd64-v1.3.1.tar.gz && tar -xvf v2ray-plugin-linux-amd64-v1.3.1.tar.gz && sudo cp -rf ~/v2ray-plugin_linux_amd64 /etc/shadowsocks-libev`]
+
+1. Getting the V2Ray binary (check https://github.com/shadowsocks/v2ray-plugin/releases for version update)
+
+`wget https://github.com/shadowsocks/v2ray-plugin/releases/download/v1.3.1/v2ray-plugin-linux-amd64-v1.3.1.tar.gz`
+
+2. Extracting the binary
+
+`tar -xvf v2ray-plugin-linux-amd64-v1.3.1.tar.gz`
+
+3. sudo: unable to resolve host ip-x-x-x-x workaround
+
+`vim /etc/hosts` then add `127.0.0.1 ip-x-x-x-x`
+
+4. Copying the binary to the correct location
+
+[Quick Step 3: `sudo cp -rf ~/v2ray-plugin_linux_amd64 /etc/shadowsocks-libev && sudo vim /etc/shadowsocks-libev/config.json`]
+
+`cp -rf ~/v2ray-plugin_linux_amd64 /etc/shadowsocks-libev`
+
+5. Editing the Shadowsocks config to support v2ray (more plugin option at https://github.com/shadowsocks/v2ray-plugin)
+
+`vim /etc/shadowsocks-libev/config.json` then 
+`"plugin":"/etc/shadowsocks-libev/v2ray-plugin_linux_amd64",
+"plugin_opts":"server;host=updates-http.cdn-apple.com"`
+
+6. Restart
+
+`systemctl restart shadowsocks-libev.service`
