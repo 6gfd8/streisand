@@ -79,25 +79,27 @@ sudo yum -y update && sudo yum install -y \
 
         git clone https://github.com/6gfd8/streisand.git && cd streisand
 
-1. Run the installer for Ansible and its dependencies. The installer will detect missing packages, and print the commands needed to install them. (Ignore the Python 2.7 `DEPRECATION` warning; ignore the warning from python-novaclient that pbr 5.1.3 is incompatible.) 
+2. Run the installer for Ansible and its dependencies. The installer will detect missing packages, and print the commands needed to install them. (Ignore the Python 2.7 `DEPRECATION` warning; ignore the warning from python-novaclient that pbr 5.1.3 is incompatible.) 
 
-[Quick Step 1: `sudo apt update && sudo apt upgrade && ssh-keygen && sudo apt-get install git python3 python3-venv rcconf build-essential python3-pip python3-openssl python3-dev python3-setuptools python-cffi libffi-dev libssl-dev libcurl4-openssl-dev && git clone https://github.com/6gfd8/streisand.git && cd streisand && ./util/venv-dependencies.sh ./venv && source ./venv/bin/activate && ./streisand`]
+[Quick Step 1 (w/ rcconf for disabling Nginx services): `sudo apt update && sudo apt upgrade && ssh-keygen && sudo apt install rcconf git python3 python3-venv build-essential python3-pip python3-openssl python3-dev python3-setuptools python-cffi libffi-dev libssl-dev libcurl4-openssl-dev && git clone https://github.com/6gfd8/streisand.git && cd streisand && ./util/venv-dependencies.sh ./venv && source ./venv/bin/activate && ./streisand`]
+
+[Alt Step 1 (wo/ rcconf): `sudo apt update && sudo apt upgrade && ssh-keygen && sudo apt install git python3 python3-venv build-essential python3-pip python3-openssl python3-dev python3-setuptools python-cffi libffi-dev libssl-dev libcurl4-openssl-dev && git clone https://github.com/6gfd8/streisand.git && cd streisand && ./util/venv-dependencies.sh ./venv && source ./venv/bin/activate && ./streisand`]
 
        ./util/venv-dependencies.sh ./venv
 
-1. Activate the Ansible packages that were installed.
+3. Activate the Ansible packages that were installed.
 
 [Quick Step: `./util/venv-dependencies.sh ./venv && source ./venv/bin/activate && ./streisand`]
 
         source ./venv/bin/activate
 
-1. Execute the Streisand script.
+4. Execute the Streisand script.
 
         ./streisand
 
-1. Follow the prompts to choose your provider, the physical region for the server, and its name. You will also be asked to enter API information.
-1. Once login information and API keys are entered, Streisand will begin spinning up a new remote server.
-1. Wait for the setup to complete (this usually takes around ten minutes) and look for the corresponding files in the `generated-docs` folder in the Streisand repository directory. The HTML file will explain how to connect to the Gateway over SSL, or via the Tor hidden service. All instructions, files, mirrored clients, and keys for the new server can then be found on the Gateway. You are all done!
+5. Follow the prompts to choose your provider, the physical region for the server, and its name. You will also be asked to enter API information.
+6. Once login information and API keys are entered, Streisand will begin spinning up a new remote server.
+7. Wait for the setup to complete (this usually takes around ten minutes) and look for the corresponding files in the `generated-docs` folder in the Streisand repository directory. The HTML file will explain how to connect to the Gateway over SSL, or via the Tor hidden service. All instructions, files, mirrored clients, and keys for the new server can then be found on the Gateway. You are all done!
 
 ## Keep the results!
 
@@ -105,11 +107,11 @@ You should keep a copy of the `generated-docs` directory for the life of the ser
 
 Remember to save your `~/.ssh/id_rsa` and `~/.ssh/id_rsa.pub` SSH keys too. You'll need them in case you want to troubleshoot or perform maintenance on your server later.
 
-## V2Ray Workaround (Oct 2020)
+## V2Ray Workaround w/ localhost (Oct 2020)
 
 [Quick Step 2: `wget https://github.com/shadowsocks/v2ray-plugin/releases/download/v1.3.1/v2ray-plugin-linux-amd64-v1.3.1.tar.gz && tar -xvf v2ray-plugin-linux-amd64-v1.3.1.tar.gz && sudo cp -rf ~/v2ray-plugin_linux_amd64 /etc/shadowsocks-libev`]
 
-1. Getting the V2Ray binary (check https://github.com/shadowsocks/v2ray-plugin/releases for version update)
+1. Getting the V2Ray binary (check https://github.com/shadowsocks/v2ray-plugin/releases for updates)
 
 `wget https://github.com/shadowsocks/v2ray-plugin/releases/download/v1.3.1/v2ray-plugin-linux-amd64-v1.3.1.tar.gz`
 
@@ -127,7 +129,7 @@ Remember to save your `~/.ssh/id_rsa` and `~/.ssh/id_rsa.pub` SSH keys too. You'
 
 `cp -rf ~/v2ray-plugin_linux_amd64 /etc/shadowsocks-libev`
 
-5. Editing the Shadowsocks config to support v2ray (more plugin option at https://github.com/shadowsocks/v2ray-plugin)
+5. Editing the Shadowsocks config to support V2Ray
 
 `vim /etc/shadowsocks-libev/config.json` then 
 `"plugin":"/etc/shadowsocks-libev/v2ray-plugin_linux_amd64",
