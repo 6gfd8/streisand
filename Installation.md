@@ -109,7 +109,7 @@ Remember to save your `~/.ssh/id_rsa` and `~/.ssh/id_rsa.pub` SSH keys too. You'
 
 ## V2Ray Workaround w/ localhost (Oct 2020)
 
-[Quick Step 2: `wget https://github.com/shadowsocks/v2ray-plugin/releases/download/v1.3.1/v2ray-plugin-linux-amd64-v1.3.1.tar.gz && tar -xvf v2ray-plugin-linux-amd64-v1.3.1.tar.gz && sudo cp -rf ~/v2ray-plugin_linux_amd64 /etc/shadowsocks-libev`]
+[Quick Step 2: `wget https://github.com/shadowsocks/v2ray-plugin/releases/download/v1.3.1/v2ray-plugin-linux-amd64-v1.3.1.tar.gz && tar -xvf v2ray-plugin-linux-amd64-v1.3.1.tar.gz && sudo cp -rf ~/streisand/v2ray-plugin_linux_amd64 /etc/shadowsocks-libev`]
 
 1. Getting the V2Ray binary (check https://github.com/shadowsocks/v2ray-plugin/releases for updates)
 
