@@ -125,7 +125,7 @@ Remember to save your `~/.ssh/id_rsa` and `~/.ssh/id_rsa.pub` SSH keys too. You'
 
 4. Copying the binary to the correct location
 
-[Quick Step 3: `sudo cp -rf ~/v2ray-plugin_linux_amd64 /etc/shadowsocks-libev && sudo vim /etc/shadowsocks-libev/config.json`]
+[Quick Step 3: `sudo cp -rf ~/streisand/v2ray-plugin_linux_amd64 /etc/shadowsocks-libev && sudo vim /etc/shadowsocks-libev/config.json`]
 
 `cp -rf ~/v2ray-plugin_linux_amd64 /etc/shadowsocks-libev`
 
