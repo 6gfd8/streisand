@@ -81,9 +81,7 @@ sudo yum -y update && sudo yum install -y \
 
 2. Run the installer for Ansible and its dependencies. The installer will detect missing packages, and print the commands needed to install them. (Ignore the Python 2.7 `DEPRECATION` warning; ignore the warning from python-novaclient that pbr 5.1.3 is incompatible.) 
 
-[Quick Step 1 (w/ rcconf for disabling Nginx services): `sudo apt update && sudo apt upgrade && ssh-keygen && sudo apt install rcconf git python3 python3-venv build-essential python3-pip python3-openssl python3-dev python3-setuptools python-cffi libffi-dev libssl-dev libcurl4-openssl-dev && git clone https://github.com/6gfd8/streisand.git && cd streisand && ./util/venv-dependencies.sh ./venv && source ./venv/bin/activate && ./streisand`]
-
-[Alt Step 1 (wo/ rcconf): `sudo apt update && sudo apt upgrade && ssh-keygen && sudo apt install git python3 python3-venv build-essential python3-pip python3-openssl python3-dev python3-setuptools python-cffi libffi-dev libssl-dev libcurl4-openssl-dev && git clone https://github.com/6gfd8/streisand.git && cd streisand && ./util/venv-dependencies.sh ./venv && source ./venv/bin/activate && ./streisand`]
+[Quick Step 1: `sudo apt update && sudo apt upgrade && ssh-keygen && sudo apt install git python3 python3-venv build-essential python3-pip python3-openssl python3-dev python3-setuptools python-cffi libffi-dev libssl-dev libcurl4-openssl-dev && git clone https://github.com/6gfd8/streisand.git && cd streisand && ./util/venv-dependencies.sh ./venv && source ./venv/bin/activate && ./streisand`]
 
        ./util/venv-dependencies.sh ./venv
 
@@ -106,6 +104,8 @@ sudo yum -y update && sudo yum install -y \
 You should keep a copy of the `generated-docs` directory for the life of the server.
 
 Remember to save your `~/.ssh/id_rsa` and `~/.ssh/id_rsa.pub` SSH keys too. You'll need them in case you want to troubleshoot or perform maintenance on your server later.
+
+[Quick Step 4 (Disabling Nginx and rsync, alternatively, install rcconf): `sudo systemctl disable nginx.service && sudo systemctl stop nginx.service && sudo systemctl mask nginx.service && sudo systemctl disable rsync && sudo systemctl stop rsync && sudo systemctl mask rsync`]
 
 ## V2Ray Workaround w/ localhost (Oct 2020)
 
@@ -131,7 +131,7 @@ Remember to save your `~/.ssh/id_rsa` and `~/.ssh/id_rsa.pub` SSH keys too. You'
 
 5. Editing the Shadowsocks config to support V2Ray
 
-`vim /etc/shadowsocks-libev/config.json` then 
+`vim /etc/shadowsocks-libev/config.json` then add the following before '}':
 `"plugin":"/etc/shadowsocks-libev/v2ray-plugin_linux_amd64",
 "plugin_opts":"server;host=updates-http.cdn-apple.com"`
 
