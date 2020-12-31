@@ -1,3 +1,4 @@
+# related file: global_vars/default-site.yml
 ---
 - name: Customize enabled Streisand services
   hosts: localhost
