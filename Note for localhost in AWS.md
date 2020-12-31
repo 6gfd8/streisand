@@ -37,7 +37,7 @@ See [the installation instructions](installation.md).
 5. Choose option seven - localhost (Advanced)
 6. Wait for the setup to complete (this usually takes around ten minutes) and scp the `generated-docs` folder from the remote host to some local storage. The HTML file will explain how to connect to the Gateway over SSL, or via the Tor hidden service. All instructions, files, mirrored clients for the new server can then be found on the Gateway. You are all done!
 
-## V2Ray Workaround w/ localhost (Oct 2020)
+## V2Ray Workaround (localhost; Oct 2020)
 
 [Quick Step 2: `wget https://github.com/shadowsocks/v2ray-plugin/releases/download/v1.3.1/v2ray-plugin-linux-amd64-v1.3.1.tar.gz && tar -xvf v2ray-plugin-linux-amd64-v1.3.1.tar.gz && sudo cp -rf ~/streisand/v2ray-plugin_linux_amd64 /etc/shadowsocks-libev`]
 
@@ -59,7 +59,7 @@ See [the installation instructions](installation.md).
 
 `cp -rf ~/v2ray-plugin_linux_amd64 /etc/shadowsocks-libev`
 
-5. Editing the Shadowsocks config to support V2Ray
+5. Editing the Shadowsocks config to enabled the V2Ray plugin
 
 `vim /etc/shadowsocks-libev/config.json` then add the following before '}':
 `"plugin":"/etc/shadowsocks-libev/v2ray-plugin_linux_amd64",
@@ -69,6 +69,6 @@ See [the installation instructions](installation.md).
 
 `systemctl restart shadowsocks-libev.service`
 
-7. Disabling Nginx and rsync, alternatively, install rcconf
+7. Disabling Nginx and rsync, alternatively, use rcconf
 
 [Quick Step 4: `sudo systemctl disable nginx.service && sudo systemctl stop nginx.service && sudo systemctl mask nginx.service && sudo systemctl disable rsync && sudo systemctl stop rsync && sudo systemctl mask rsync`]
