@@ -2,7 +2,7 @@
 - name: Apply the sysctl value to enable TCP Fast Open
   sysctl:
     name: net.ipv4.tcp_fastopen
-    value: 3
+    value: "3"
     state: present
   when: ansible_virtualization_type != 'lxc'
 
