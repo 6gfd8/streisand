@@ -4,6 +4,24 @@
     package: bind9
     state: absent
 
+- name: Disable systemd-resolved and mask it
+  systemd:
+    name: systemd-resolved
+    enabled: no
+    masked: yes
+    state: stopped
+
+- name: Remove resolv file
+  file:
+    path: /etc/resolv.conf
+    state: absent
+
+- name: Create temporary resolv file
+  copy:
+    dest: "/etc/resolv.conf"
+    content: |
+      nameserver 1.1.1.1
+
 - name: Install dnsmasq
   apt:
     package: dnsmasq
@@ -31,3 +49,9 @@
     name: dnsmasq.service
     enabled: yes
     state: restarted
+   
+- name: Update resolv file to use local server
+  copy:
+    dest: "/etc/resolv.conf"
+    content: |
+      nameserver 127.0.0.1
