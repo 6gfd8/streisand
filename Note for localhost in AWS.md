@@ -41,8 +41,7 @@ See [the installation instructions](installation.md).
 
 **Update in Jan 2021: the following workaround has been integrated into the relevant Ansible Playbook**
 
-
-[Quick Step 2: `wget https://github.com/shadowsocks/v2ray-plugin/releases/download/v1.3.1/v2ray-plugin-linux-amd64-v1.3.1.tar.gz && tar -xvf v2ray-plugin-linux-amd64-v1.3.1.tar.gz && sudo cp -rf ~/streisand/v2ray-plugin_linux_amd64 /etc/shadowsocks-libev`]
+[Manual Step 1: `wget https://github.com/shadowsocks/v2ray-plugin/releases/download/v1.3.1/v2ray-plugin-linux-amd64-v1.3.1.tar.gz && tar -xvf v2ray-plugin-linux-amd64-v1.3.1.tar.gz && sudo cp -rf ~/streisand/v2ray-plugin_linux_amd64 /etc/shadowsocks-libev`]
 
 1. Getting the V2Ray binary (check https://github.com/shadowsocks/v2ray-plugin/releases for updates)
 
