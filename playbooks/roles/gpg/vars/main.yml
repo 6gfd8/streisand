@@ -8,7 +8,7 @@ streisand_gpg_dir: "{{ root_gpg_dir }}/streisand"
 # GPG Keyserver's Root CA Cert
 # Currently the keyserver is using an Amazon certificate, whose root CA is signed
 # by "Starfield Services", which should be available by default in /etc/ssl/certs
-# streisand_gpg_keyserver_root_ca: "Starfield_Services_Root_Certificate_Authority_-_G2.pem"
+streisand_gpg_keyserver_root_ca: "Starfield_Services_Root_Certificate_Authority_-_G2.pem"
 
 # Where is the Streisand specific GPG keyring kept?
 streisand_gpg_keyring: "{{ streisand_gpg_dir }}/pubring.gpg"
