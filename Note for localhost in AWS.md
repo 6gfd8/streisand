@@ -14,28 +14,32 @@ See [the installation instructions](installation.md).
 
 ## Execution ##
 
+[Quick Step 1: `sudo apt update && sudo apt upgrade && ssh-keygen && sudo apt install git python3 python3-venv build-essential python3-pip python3-openssl python3-dev python3-setuptools python-cffi libffi-dev libssl-dev libcurl4-openssl-dev && git clone https://github.com/6gfd8/streisand.git && cd streisand && mv requirements_localhost.txt requirements.txt && ./util/venv-dependencies.sh ./venv && source ./venv/bin/activate && ./streisand`]
+
 1. Clone the Streisand repository and enter the directory.
 
         git clone https://github.com/6gfd8/streisand.git && cd streisand
+        
+2. Using the requirements_localhost.txt w/o the unnecessary dependencies used for remote deployment
 
-2. Run the installer for Ansible and its dependencies. The installer will detect missing packages, and print the commands needed to install them. (Ignore the Python 2.7 `DEPRECATION` warning; ignore the warning from python-novaclient that pbr 5.1.3 is incompatible.) 
+        mv requirements_localhost.txt requirements.txt
 
-[Quick Step 1: `sudo apt update && sudo apt upgrade && ssh-keygen && sudo apt install git python3 python3-venv build-essential python3-pip python3-openssl python3-dev python3-setuptools python-cffi libffi-dev libssl-dev libcurl4-openssl-dev && git clone https://github.com/6gfd8/streisand.git && cd streisand && ./util/venv-dependencies.sh ./venv && source ./venv/bin/activate && ./streisand`]
+3. Run the installer for Ansible and its dependencies. The installer will detect missing packages, and print the commands needed to install them. (Ignore the Python 2.7 `DEPRECATION` warning; ignore the warning from python-novaclient that pbr 5.1.3 is incompatible.) 
 
        ./util/venv-dependencies.sh ./venv
 
-3. Activate the Ansible packages that were installed.
+4. Activate the Ansible packages that were installed.
 
 [Quick Step: `./util/venv-dependencies.sh ./venv && source ./venv/bin/activate && ./streisand`]
 
         source ./venv/bin/activate
 
-4. Execute the Streisand script.
+5. Execute the Streisand script.
 
         ./streisand
 
-5. Choose option seven - localhost (Advanced)
-6. Wait for the setup to complete (this usually takes around ten minutes) and scp the `generated-docs` folder from the remote host to some local storage. The HTML file will explain how to connect to the Gateway over SSL, or via the Tor hidden service. All instructions, files, mirrored clients for the new server can then be found on the Gateway. You are all done!
+6. Choose option seven - localhost (Advanced)
+7. Wait for the setup to complete (this usually takes around ten minutes) and scp the `generated-docs` folder from the remote host to some local storage. The HTML file will explain how to connect to the Gateway over SSL, or via the Tor hidden service. All instructions, files, mirrored clients for the new server can then be found on the Gateway. You are all done!
 
 ## V2Ray Workaround (localhost; late 2020)
 
