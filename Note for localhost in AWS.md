@@ -63,7 +63,7 @@ See [the installation instructions](installation.md).
 
 `vim /etc/shadowsocks-libev/config.json` then add the following before '}':
 `"plugin":"/etc/shadowsocks-libev/v2ray-plugin_linux_amd64",
-"plugin_opts":"server;host=updates-http.cdn-apple.com"`
+"plugin_opts":"server;host=apple.com"`
 
 6. Restart
 
