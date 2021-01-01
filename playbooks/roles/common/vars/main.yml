@@ -39,8 +39,8 @@ streisand_common_packages:
 
 # Services that are running by default but not needed by Streisand
 streisand_unneeded_packages:
-#  - lxd
-#  - snapd
+  - lxd
+  - snapd
 
 streisand_gateway_location: "/var/www/streisand"
 
