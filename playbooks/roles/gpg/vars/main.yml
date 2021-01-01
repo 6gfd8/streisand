@@ -8,7 +8,7 @@ streisand_gpg_dir: "{{ root_gpg_dir }}/streisand"
 # GPG Keyserver's Root CA Cert
 # Currently the keyserver is using an Amazon certificate, whose root CA is signed
 # by "Starfield Services", which should be available by default in /etc/ssl/certs
-streisand_gpg_keyserver_root_ca: "Starfield_Services_Root_Certificate_Authority_-_G2.pem"
+# streisand_gpg_keyserver_root_ca: "Starfield_Services_Root_Certificate_Authority_-_G2.pem"
 
 # Where is the Streisand specific GPG keyring kept?
 streisand_gpg_keyring: "{{ streisand_gpg_dir }}/pubring.gpg"
@@ -21,7 +21,7 @@ streisand_default_gpg_flags: "--no-default-keyring --keyring {{ streisand_gpg_ke
 # built into the GNUPG distribution, so we don't need to specify a CA cert
 # explicitly in a dirmngr config if we stick with this particular pool.
 # By default use HKP over HTTPS to the SKS Keyserver pool
-streisand_gpg_keyserver_address: "hkps://gpg.mozilla.org"
+streisand_gpg_keyserver_address: "hkps://keys.openpgp.org"
 
 # The default timeout is 30s, we use something larger
 streisand_gpg_timeout: "120"
