@@ -27,11 +27,11 @@ shadowsocks_x_ng_checksum: "sha256:dc06a995b63f8e32be9b86c265fd2979a6d73d4742d0f
 
 # Linux (x64)
 # NOTE(@cpu): if 32bit Linux clients are to be supported then we should add `shadowsocks2-linux-x86.gz`
-shadowsocks_go_version: "0.0.9"
-shadowsocks_go_filename: "shadowsocks2-linux-x64.gz"
+shadowsocks_go_version: "0.1.3"
+shadowsocks_go_filename: "shadowsocks2-linux.gz"
 shadowsocks_go_href: "{{ shadowsocks_mirror_href_base }}/{{ shadowsocks_go_filename }}"
-shadowsocks_go_url: "https://github.com/riobard/go-shadowsocks2/releases/download/v{{ shadowsocks_go_version }}/{{ shadowsocks_go_filename }}"
-shadowsocks_go_checksum: "sha256:9c08118a0caa60acdb6764112fd181513dbaa2c85d63e7b4b333895b7fe225e9"
+shadowsocks_go_url: "https://github.com/shadowsocks/go-shadowsocks2/releases/download/v{{ shadowsocks_go_version }}/{{ shadowsocks_go_filename }}"
+shadowsocks_go_checksum: "sha256:d8c63767c1ce68292ac335e3ddaad921c1a6b49a3c7bd1c3864617ba9f46d3c2"
 
 shadowsocks_download_urls:
   - { url: "{{ shadowsocks_android_url }}", checksum: "{{ shadowsocks_android_checksum }}" }
