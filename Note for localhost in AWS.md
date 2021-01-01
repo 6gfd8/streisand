@@ -37,7 +37,7 @@ See [the installation instructions](installation.md).
 5. Choose option seven - localhost (Advanced)
 6. Wait for the setup to complete (this usually takes around ten minutes) and scp the `generated-docs` folder from the remote host to some local storage. The HTML file will explain how to connect to the Gateway over SSL, or via the Tor hidden service. All instructions, files, mirrored clients for the new server can then be found on the Gateway. You are all done!
 
-## V2Ray Workaround (localhost; Oct 2020)
+## V2Ray Workaround (localhost; late 2020)
 
 **Update in Jan 2021: the following workaround has been integrated into the relevant Ansible Playbook**
 
