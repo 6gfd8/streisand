@@ -20,7 +20,7 @@
   copy:
     dest: "/etc/resolv.conf"
     content: |
-      nameserver 1.1.1.1
+      nameserver 9.9.9.9
 
 - name: Install dnsmasq
   apt:
