@@ -16,6 +16,8 @@ See [the installation instructions](installation.md).
 
 [Quick Step 1: `sudo apt update && sudo apt upgrade && ssh-keygen && sudo apt install git python3 python3-venv build-essential python3-pip python3-openssl python3-dev python3-setuptools python-cffi libffi-dev libssl-dev libcurl4-openssl-dev && git clone https://github.com/6gfd8/streisand.git && cd streisand && mv requirements_localhost.txt requirements.txt && ./util/venv-dependencies.sh ./venv && source ./venv/bin/activate && ./streisand`]
 
+[Quick Step 2: `cd generated-docs && ls`]
+
 1. Clone the Streisand repository and enter the directory.
 
         git clone https://github.com/6gfd8/streisand.git && cd streisand
@@ -45,8 +47,6 @@ See [the installation instructions](installation.md).
 
 **Update in Jan 2021: the following workaround has been integrated into the relevant Ansible Playbook**
 
-[Manual Step 1: `wget https://github.com/shadowsocks/v2ray-plugin/releases/download/v1.3.1/v2ray-plugin-linux-amd64-v1.3.1.tar.gz && tar -xvf v2ray-plugin-linux-amd64-v1.3.1.tar.gz && sudo cp -rf ~/streisand/v2ray-plugin_linux_amd64 /etc/shadowsocks-libev`]
-
 1. Getting the V2Ray binary (check https://github.com/shadowsocks/v2ray-plugin/releases for updates)
 
 `wget https://github.com/shadowsocks/v2ray-plugin/releases/download/v1.3.1/v2ray-plugin-linux-amd64-v1.3.1.tar.gz`
@@ -60,8 +60,6 @@ See [the installation instructions](installation.md).
 `vim /etc/hosts` then add `127.0.0.1 ip-x-x-x-x`
 
 4. Copying the binary to the correct location
-
-[Quick Step 3: `sudo cp -rf ~/streisand/v2ray-plugin_linux_amd64 /etc/shadowsocks-libev && sudo vim /etc/shadowsocks-libev/config.json`]
 
 `cp -rf ~/v2ray-plugin_linux_amd64 /etc/shadowsocks-libev`
 
@@ -77,4 +75,4 @@ See [the installation instructions](installation.md).
 
 7. Disabling Nginx and rsync, alternatively, use rcconf
 
-[Quick Step 4: `sudo systemctl disable nginx.service && sudo systemctl stop nginx.service && sudo systemctl mask nginx.service && sudo systemctl disable rsync && sudo systemctl stop rsync && sudo systemctl mask rsync`]
+[Quick Step 3: `sudo systemctl disable nginx.service && sudo systemctl stop nginx.service && sudo systemctl mask nginx.service && sudo systemctl disable rsync && sudo systemctl stop rsync && sudo systemctl mask rsync`]
