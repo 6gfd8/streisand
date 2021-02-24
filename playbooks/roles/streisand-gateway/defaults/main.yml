@@ -2,8 +2,8 @@
 nginx_key_country:  "US"
 nginx_key_province: "California"
 nginx_key_city: "Malibu"
-nginx_key_org: "pub_staging"
-nginx_key_ou: "TLS Department"
+nginx_key_org: "staging"
+nginx_key_ou: "TLS Dept."
 
 nginx_port: "443"
 
