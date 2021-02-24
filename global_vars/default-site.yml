@@ -26,5 +26,5 @@ streisand_sshuttle_enabled: no
 streisand_stunnel_enabled: no
 streisand_tinyproxy_enabled: no
 streisand_tor_enabled: no
-streisand_wireguard_enabled: yes
+streisand_wireguard_enabled: no
 streisand_cloudflared_enabled: no
