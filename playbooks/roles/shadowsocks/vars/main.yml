@@ -3,10 +3,7 @@ shadowsocks_location: "/etc/shadowsocks-libev"
 shadowsocks_password_file: "{{ shadowsocks_location }}/shadowsocks-password.txt"
 
 # V2ray-plugin
-# TODO: cases
-#v2ray_options: "server;host={{ shadowsocks_v2ray_cover_domain }}"
-v2ray_options: "server;tls;host={{ shadowsocks_v2ray_cover_domain }}"
-
+v2ray_options: "server;host={{ shadowsocks_v2ray_cover_domain }}"
 
 # Add -v for verbose mode to help with debugging
 shadowsocks_daemon_args: "-u"
